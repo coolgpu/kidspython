@@ -1,0 +1,27 @@
+spam = -99
+
+def scope_test():
+    def do_local():
+        spam = "local spam"
+        print("Inside do_local(): spam = %s" % spam)
+
+    def do_nonlocal():
+        nonlocal spam
+        spam = "nonlocal spam"
+        print("Inside do_nonlocal(): nonlocal spam = %s" % spam)
+
+    def do_global():
+        global spam
+        spam = "global spam"
+        print("Inside do_global(): global spam = %s" % spam)
+
+    spam = "test spam"
+    do_local()
+    print("After local assignment:", spam)
+    do_nonlocal()
+    print("After nonlocal assignment:", spam)
+    do_global()
+    print("After global assignment:", spam)
+
+scope_test()
+print("In global scope:", spam)
