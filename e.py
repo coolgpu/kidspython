@@ -20,12 +20,12 @@ print("sum1 from for loop is %f" % sum1)
 # for example, for 100 years, the rate is 1/100
 numyears = 1000
 years = range(1,numyears + 1)
-apr = 1.0/numyears
-
-sum1 = 1.0
+# apr = 1.0/numyears
+# sum1 = 1.0
 for y in years:
-    sum1 *= (1.0 + apr)
-    print("After year %d, value is %f" % (y, sum1))
+    apr = 1/y
+    balance = (1.0 + 1/y)**y
+    print("After year %d, value is %f" % (y, balance))
 
 # now directly calculate constant e:
 # definition of e: (1+1/N) ^ N
