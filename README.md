@@ -1,1 +1,1 @@
-# pythonai
+# python for kids
